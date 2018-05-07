@@ -11,8 +11,7 @@ public class AppTest123 {
 
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final String expected = "Hello World!\n";
-    private final String[] args = new String[]{""};
+    private static final String[] args = new String[]{""};
 
 
     @Before
@@ -29,8 +28,9 @@ public class AppTest123 {
 
     @Test
     public void main() {
-        App appUTest = new App();
-        appUTest.main(args);
+
+        App.main(args);
+        String expected = "Hello World!\n";
         assertEquals("Test Output", expected, outContent.toString());
     }
 }
