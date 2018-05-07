@@ -7,10 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest {
+public class AppTest123 {
+
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final String expected = "Hello World!\n";
@@ -18,25 +16,19 @@ public class AppTest {
 
 
     @Before
-    public void setUpStreams() {
+    public void setUp() {
         System.setOut(new PrintStream(outContent));
     }
 
 
     @After
-    public void restoreStreams() {
+    public void tearDown() {
         System.setOut(System.out);
     }
 
-    @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue(true);
-        assertEquals(2, 2);
-    }
-
 
     @Test
-    public void lookAtConsole() {
+    public void main() {
         App appUTest = new App();
         appUTest.main(args);
         assertEquals("Test Output", expected, outContent.toString());
